@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Award, Leaf, Ship, Sparkles } from 'lucide-react'
+import { ArrowRight, Award, Leaf, Ship } from 'lucide-react'
 import { products } from '../data/products'
 import { ProductGrid } from '../components/products/ProductGrid'
 import { Button } from '../components/ui/Button'
@@ -28,7 +28,7 @@ export function HomePage() {
         </div>
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cocoa-900/80 via-navy-900/60 to-navy-950/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-plum-950/90 via-plum-900/70 to-navy-950/90" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-gold-500/10" />
         <div className="absolute inset-0 hero-shimmer pointer-events-none" />
 
@@ -41,19 +41,28 @@ export function HomePage() {
           <div className="grid w-full items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left — copy */}
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-1.5 backdrop-blur-sm">
-                <Sparkles className="h-3.5 w-3.5 text-gold-400" />
-                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400">
-                  Artisan Cocoa & Chocolate
-                </span>
+              <div className="inline-flex items-center gap-3 rounded-2xl border border-gold-500/30 bg-plum-950/40 px-4 py-2 backdrop-blur-sm">
+                <img
+                  src="/logo.png"
+                  alt="Visas Yacht"
+                  className="h-12 w-12 rounded-lg object-cover ring-1 ring-gold-500/30"
+                />
+                <div className="text-left">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+                    Luxury Chocolates
+                  </p>
+                  <p className="font-display text-sm italic text-cream-200/80">
+                    Sink with One Bite
+                  </p>
+                </div>
               </div>
 
               <h1 className="mt-6 font-display text-5xl font-bold leading-[1.08] text-cream-50 sm:text-6xl lg:text-7xl">
-                Savour the voyage of{' '}
+                Indulge in{' '}
                 <span className="bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent">
-                  exceptional
+                  Visas Yacht
                 </span>{' '}
-                flavour
+                luxury
               </h1>
 
               <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-cream-200/85 sm:text-lg lg:mx-0">

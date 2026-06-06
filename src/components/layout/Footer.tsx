@@ -1,21 +1,24 @@
 import { Link } from 'react-router-dom'
-import { Anchor, Instagram, Mail } from 'lucide-react'
+import { Instagram, Mail } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="bg-navy-900 text-cream-100">
+    <footer className="bg-plum-950 text-cream-100">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2">
-              <Anchor className="h-5 w-5 text-gold-500" />
-              <span className="font-display text-2xl font-semibold text-cream-50">
-                Yacht<span className="text-gold-500">Cocoa</span>
+            <Link to="/" className="inline-block">
+              <img
+                src="/logo.png"
+                alt="Visas Yacht Luxury Chocolates"
+                className="h-28 w-28 rounded-xl object-cover shadow-lg ring-1 ring-gold-500/30 transition-transform hover:scale-105"
+              />
+            </Link>
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream-200/80">
+              Luxury chocolates crafted for the discerning palate.
+              <span className="mt-1 block font-display text-base italic text-gold-400/90">
+                Sink with One Bite.
               </span>
-            </div>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream-200/80">
-              Artisan cocoa and chocolate, crafted with the precision of a
-              seasoned captain and the warmth of a harbour at dusk.
             </p>
             <div className="mt-6 flex gap-4">
               <a
@@ -76,12 +79,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-navy-700 pt-8 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-plum-800 pt-8 sm:flex-row">
           <p className="text-xs text-cream-200/60">
-            &copy; {new Date().getFullYear()} YachtCocoa. Demo storefront.
+            &copy; {new Date().getFullYear()} Visas Yacht Luxury Chocolates.
           </p>
           <p className="text-xs text-cream-200/60">
-            Crafted with care for the discerning palate.
+            Sink with One Bite.
           </p>
         </div>
       </div>

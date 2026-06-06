@@ -17,6 +17,10 @@
   --color-cocoa-700: #3d2314;
   --color-cocoa-800: #2a1810;
   --color-cocoa-900: #1a0f09;
+  --color-plum-200: #d4b8d4;
+  --color-plum-800: #4a2040;
+  --color-plum-900: #3a1835;
+  --color-plum-950: #2a1028;
 }
 
 @layer base {
@@ -43,7 +47,7 @@
       radial-gradient(ellipse 80% 60% at 70% 20%, rgba(201, 169, 110, 0.35) 0%, transparent 60%),
       radial-gradient(ellipse 60% 50% at 20% 80%, rgba(61, 35, 20, 0.5) 0%, transparent 55%),
       radial-gradient(ellipse 50% 40% at 90% 70%, rgba(18, 34, 64, 0.6) 0%, transparent 50%),
-      linear-gradient(135deg, #1a0f09 0%, #2a1810 30%, #0a1628 70%, #060d18 100%);
+      linear-gradient(135deg, #2a1028 0%, #3a1835 30%, #2a1810 60%, #060d18 100%);
   }
 
   .hero-shimmer {
