@@ -37,6 +37,16 @@ npm run preview
 
 Open [http://localhost:5173](http://localhost:5173) after running `npm run dev`.
 
+## Deploy to Vercel
+
+This project is configured for [Vercel](https://vercel.com) deployment:
+
+1. Push the repo to GitHub
+2. Import the project in Vercel (it auto-detects Vite)
+3. Deploy — no extra environment variables needed
+
+The `vercel.json` includes SPA rewrites so routes like `/products` and `/cart` work on refresh.
+
 ## Project Structure
 
 ```
