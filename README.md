@@ -1,6 +1,6 @@
-# YachtCocoa Demo
+# Yacht Cocoa Demo
 
-A modern React e-commerce demo storefront for **YachtCocoa** — premium artisan cocoa and chocolate.
+A modern React e-commerce demo storefront for **Yacht Cocoa** — premium artisan cocoa and chocolate.
 
 ## Features
 

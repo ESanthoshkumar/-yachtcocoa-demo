@@ -10,15 +10,13 @@ export function Footer() {
             <Link to="/" className="inline-block">
               <img
                 src="/logo.png"
-                alt="Visas Yacht Luxury Chocolates"
+                alt="Yacht Cocoa"
                 className="h-28 w-28 rounded-xl object-cover shadow-lg ring-1 ring-gold-500/30 transition-transform hover:scale-105"
               />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream-200/80">
-              Luxury chocolates crafted for the discerning palate.
-              <span className="mt-1 block font-display text-base italic text-gold-400/90">
-                Sink with One Bite.
-              </span>
+              Premium artisan cocoa and chocolate, crafted for the discerning
+              palate.
             </p>
             <div className="mt-6 flex gap-4">
               <a
@@ -81,10 +79,10 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-plum-800 pt-8 sm:flex-row">
           <p className="text-xs text-cream-200/60">
-            &copy; {new Date().getFullYear()} Visas Yacht Luxury Chocolates.
+            &copy; {new Date().getFullYear()} Yacht Cocoa. All rights reserved.
           </p>
           <p className="text-xs text-cream-200/60">
-            Sink with One Bite.
+            Crafted with care for the discerning palate.
           </p>
         </div>
       </div>

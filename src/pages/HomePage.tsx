@@ -44,25 +44,25 @@ export function HomePage() {
               <div className="inline-flex items-center gap-3 rounded-2xl border border-gold-500/30 bg-plum-950/40 px-4 py-2 backdrop-blur-sm">
                 <img
                   src="/logo.png"
-                  alt="Visas Yacht"
+                  alt="Yacht Cocoa"
                   className="h-12 w-12 rounded-lg object-cover ring-1 ring-gold-500/30"
                 />
                 <div className="text-left">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
-                    Luxury Chocolates
+                  <p className="font-display text-base font-semibold text-cream-50">
+                    Yacht <span className="text-gold-400">Cocoa</span>
                   </p>
-                  <p className="font-display text-sm italic text-cream-200/80">
-                    Sink with One Bite
+                  <p className="text-xs text-cream-200/70">
+                    Premium artisan cocoa & chocolate
                   </p>
                 </div>
               </div>
 
               <h1 className="mt-6 font-display text-5xl font-bold leading-[1.08] text-cream-50 sm:text-6xl lg:text-7xl">
-                Indulge in{' '}
+                Savour the voyage of{' '}
                 <span className="bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent">
-                  Visas Yacht
+                  exceptional
                 </span>{' '}
-                luxury
+                flavour
               </h1>
 
               <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-cream-200/85 sm:text-lg lg:mx-0">
@@ -253,7 +253,7 @@ export function HomePage() {
             </h2>
             <p className="mt-3 max-w-md text-cream-200/80">
               Our signature gift set — the perfect introduction to the
-              YachtCocoa experience.
+              Yacht Cocoa experience.
             </p>
           </div>
           <Link to="/products/5">

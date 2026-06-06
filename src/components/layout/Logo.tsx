@@ -18,16 +18,16 @@ export function Logo({ size = 'sm', showTagline = false }: LogoProps) {
     <Link to="/" className="group flex items-center gap-3">
       <img
         src="/logo.png"
-        alt="Visas Yacht Luxury Chocolates"
+        alt="Yacht Cocoa"
         className={`${s.img} shrink-0 rounded-lg object-cover shadow-md ring-1 ring-gold-500/20 transition-transform group-hover:scale-105`}
       />
       {showTagline && (
         <div className="hidden sm:block">
           <p className="font-display text-lg font-semibold leading-tight text-navy-900">
-            Visas <span className="text-gold-600">Yacht</span>
+            Yacht <span className="text-gold-600">Cocoa</span>
           </p>
           <p className={`${s.tagline} text-navy-700/60`}>
-            Luxury Chocolates · Sink with One Bite
+            Premium artisan cocoa & chocolate
           </p>
         </div>
       )}
