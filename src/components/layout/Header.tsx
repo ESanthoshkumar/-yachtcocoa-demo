@@ -7,8 +7,7 @@ import { Logo } from './Logo'
 const navLinks = [
   { to: '/products', label: 'Shop' },
   { to: '/products?category=bars', label: 'Bars' },
-  { to: '/products?category=gifts', label: 'Gifts' },
-  { to: '/products?category=drinking', label: 'Drinking' },
+  { to: '/products?category=truffles', label: 'Specialty' },
 ]
 
 export function Header() {
