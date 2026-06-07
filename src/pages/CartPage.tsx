@@ -3,10 +3,11 @@ import { Minus, Plus, Trash2, ShoppingBag, ArrowRight, Gift, Heart } from 'lucid
 import { useCart } from '../context/CartContext'
 import { giftWrapOptions } from '../data/giftWrap'
 import { Button } from '../components/ui/Button'
+import { formatPriceFixed, FREE_SHIPPING_MIN } from '../utils/currency'
 
 export function CartPage() {
   const { items, subtotal, updateQuantity, removeItem } = useCart()
-  const shipping = subtotal > 75 ? 0 : 8
+  const shipping = subtotal > FREE_SHIPPING_MIN ? 0 : 8
   const total = subtotal + shipping
 
   if (items.length === 0) {
@@ -154,7 +155,7 @@ export function CartPage() {
                       </button>
                     </div>
                     <span className="font-display text-lg font-semibold text-navy-900">
-                      ${(product.price * quantity).toFixed(2)}
+                      {formatPriceFixed(product.price * quantity)}
                     </span>
                   </div>
                 </div>
@@ -171,21 +172,21 @@ export function CartPage() {
           <div className="mt-6 space-y-3 text-sm">
             <div className="flex justify-between text-navy-700/70">
               <span>Subtotal</span>
-              <span>${subtotal.toFixed(2)}</span>
+              <span>{formatPriceFixed(subtotal)}</span>
             </div>
             <div className="flex justify-between text-navy-700/70">
               <span>Shipping</span>
-              <span>{shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}</span>
+              <span>{shipping === 0 ? 'Free' : formatPriceFixed(shipping)}</span>
             </div>
-            {subtotal < 75 && (
+            {subtotal < FREE_SHIPPING_MIN && (
               <p className="text-xs text-gold-600">
-                Add ${(75 - subtotal).toFixed(2)} more for free shipping
+                Add {formatPriceFixed(FREE_SHIPPING_MIN - subtotal)} more for free shipping
               </p>
             )}
             <div className="border-t border-cream-200 pt-3">
               <div className="flex justify-between font-display text-lg font-semibold text-navy-900">
                 <span>Total</span>
-                <span>${total.toFixed(2)}</span>
+                <span>{formatPriceFixed(total)}</span>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, Volume2, VolumeX } from 'lucide-react'
 import { products } from '../../data/products'
 import { Button } from '../ui/Button'
+import { formatPrice, FREE_SHIPPING_MIN } from '../../utils/currency'
 
 const heroProduct = products[0]
 const BANNER_VIDEO = '/bannerVideo.mp4'
@@ -139,7 +140,7 @@ export function HeroSection() {
                   </p>
                   <div className="mt-4 flex items-center justify-between">
                     <span className="font-display text-2xl font-bold text-gold-400">
-                      ${heroProduct.price}
+                        {formatPrice(heroProduct.price)}
                     </span>
                     <Link to={`/products/${heroProduct.id}`}>
                       <Button size="sm" variant="secondary">
@@ -162,7 +163,7 @@ export function HeroSection() {
               <p className="text-[10px] font-semibold uppercase tracking-wider text-gold-400">
                 Free Shipping
               </p>
-              <p className="text-sm font-medium text-cream-50">Orders over $75</p>
+                <p className="text-sm font-medium text-cream-50">Orders over {formatPrice(FREE_SHIPPING_MIN)}</p>
             </div>
           </div>
         </div>

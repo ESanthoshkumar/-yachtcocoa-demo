@@ -4,6 +4,7 @@ import { products } from '../data/products'
 import { ProductGrid } from '../components/products/ProductGrid'
 import { Button } from '../components/ui/Button'
 import { HeroSection } from '../components/home/HeroSection'
+import { formatPrice } from '../utils/currency'
 
 export function HomePage() {
   const featured = products.filter((p) => p.badge).slice(0, 4)
@@ -189,7 +190,7 @@ export function HomePage() {
             </h2>
             <p className="mt-4 max-w-md text-base leading-relaxed text-cream-200/85">
               Three premium bars with your photo on the cover — hand-wrapped and
-              ready to surprise someone you love. From $45.
+              ready to surprise someone you love. From {formatPrice(45)}.
             </p>
           </div>
           <Link to="/gifts" className="shrink-0">

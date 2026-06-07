@@ -4,6 +4,7 @@ import { ArrowLeft, CheckCircle, CreditCard, Lock } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { giftWrapOptions } from '../data/giftWrap'
 import { Button } from '../components/ui/Button'
+import { formatPriceFixed, FREE_SHIPPING_MIN } from '../utils/currency'
 
 export function CheckoutPage() {
   const { items, subtotal, clearCart } = useCart()
@@ -11,7 +12,7 @@ export function CheckoutPage() {
   const [step, setStep] = useState<'form' | 'success'>('form')
   const [loading, setLoading] = useState(false)
 
-  const shipping = subtotal > 75 ? 0 : 8
+  const shipping = subtotal > FREE_SHIPPING_MIN ? 0 : 8
   const total = subtotal + shipping
 
   if (items.length === 0 && step !== 'success') {
@@ -184,7 +185,7 @@ export function CheckoutPage() {
                       {product.name} × {quantity}
                     </span>
                     <span className="font-medium text-navy-900">
-                      ${(product.price * quantity).toFixed(2)}
+                      {formatPriceFixed(product.price * quantity)}
                     </span>
                   </div>
                   {gift && (
@@ -201,15 +202,15 @@ export function CheckoutPage() {
           <div className="mt-6 space-y-2 border-t border-cream-200 pt-4 text-sm">
             <div className="flex justify-between text-navy-700/70">
               <span>Subtotal</span>
-              <span>${subtotal.toFixed(2)}</span>
+              <span>{formatPriceFixed(subtotal)}</span>
             </div>
             <div className="flex justify-between text-navy-700/70">
               <span>Shipping</span>
-              <span>{shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}</span>
+              <span>{shipping === 0 ? 'Free' : formatPriceFixed(shipping)}</span>
             </div>
             <div className="flex justify-between font-display text-lg font-semibold text-navy-900">
               <span>Total</span>
-              <span>${total.toFixed(2)}</span>
+              <span>{formatPriceFixed(total)}</span>
             </div>
           </div>
 
@@ -219,7 +220,7 @@ export function CheckoutPage() {
             className="mt-6 w-full"
             disabled={loading}
           >
-            {loading ? 'Processing...' : `Place Order — $${total.toFixed(2)}`}
+            {loading ? 'Processing...' : `Place Order — ${formatPriceFixed(total)}`}
           </Button>
         </div>
       </form>

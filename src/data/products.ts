@@ -25,7 +25,7 @@ export const products: Product[] = [
     description: 'Intense dark chocolate with deep cocoa notes and a smooth finish.',
     longDescription:
       'Our signature dark chocolate bar is crafted from premium cacao for a bold, velvety experience. Rich cocoa flavour with a clean, satisfying finish — perfect for true dark chocolate lovers.',
-    price: 18,
+    price: 180,
     category: 'bars',
     image: '/product/dark.png',
     badge: 'Bestseller',
@@ -40,7 +40,7 @@ export const products: Product[] = [
     description: 'Silky white chocolate with creamy vanilla and a gentle sweetness.',
     longDescription:
       'Luxuriously smooth white chocolate made with the finest cocoa butter. Delicate vanilla notes and a melt-in-your-mouth texture make this a refined everyday indulgence.',
-    price: 16,
+    price: 160,
     category: 'bars',
     image: '/product/whitecho.png',
     rating: 4.7,
@@ -54,7 +54,7 @@ export const products: Product[] = [
     description: 'Milk chocolate studded with toasted Marcona almonds.',
     longDescription:
       'Creamy milk chocolate meets buttery Marcona almonds in every bite. A satisfying crunch paired with balanced sweetness — inspired by Mediterranean confectionery traditions.',
-    price: 20,
+    price: 200,
     category: 'bars',
     image: '/product/almond.png',
     badge: 'Limited',
@@ -69,7 +69,7 @@ export const products: Product[] = [
     description: 'Chocolate infused with sweet Medjool dates and warm spices.',
     longDescription:
       'A distinctive blend of fine chocolate and naturally sweet Medjool dates. Warm, caramel-like notes with a soft chew — a modern twist on a timeless pairing.',
-    price: 22,
+    price: 220,
     category: 'truffles',
     image: '/product/DateChoco.png',
     badge: 'New',
@@ -84,7 +84,7 @@ export const products: Product[] = [
     description: 'Creamy chocolate with roasted peanuts and a touch of sea salt.',
     longDescription:
       'Roasted peanuts folded into smooth chocolate with a whisper of sea salt. A classic combination elevated with premium ingredients and artisan craftsmanship.',
-    price: 18,
+    price: 180,
     category: 'bars',
     image: '/product/peanut.png',
     badge: 'Popular',
@@ -99,7 +99,7 @@ export const products: Product[] = [
     description: 'Two artisan bars in a photo-printed, hand-wrapped surprise box.',
     longDescription:
       'A thoughtful gift for someone special. Choose two of our finest bars, upload a cherished photo, and we print it on the cover and wrap it beautifully for a delightful surprise reveal.',
-    price: 45,
+    price: 450,
     category: 'gifts',
     image: '/product/dark.png',
     badge: 'For Loved Ones',
@@ -120,7 +120,7 @@ export const products: Product[] = [
     description: 'Three bars with photo cover print and premium surprise wrapping.',
     longDescription:
       'Our most popular gift for partners, parents, and dear friends. Three premium bars nestled in an elegant box — your photo printed on the lid, wrapped in your chosen style for an unforgettable unboxing moment.',
-    price: 68,
+    price: 680,
     category: 'gifts',
     image: '/product/almond.png',
     badge: 'Most Gifted',
@@ -142,7 +142,7 @@ export const products: Product[] = [
     description: 'The complete collection with luxury wrap and photo cover print.',
     longDescription:
       'The ultimate expression of love. All five Yacht Cocoa creations presented in a luxury gift box with your photo beautifully printed on the cover, finished with premium wrapping for a grand surprise.',
-    price: 95,
+    price: 950,
     category: 'gifts',
     image: '/product/DateChoco.png',
     badge: 'Premium',

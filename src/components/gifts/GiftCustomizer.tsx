@@ -5,6 +5,7 @@ import { giftWrapOptions } from '../../data/giftWrap'
 import { useCart } from '../../context/CartContext'
 import { GiftPreview } from './GiftPreview'
 import { Button } from '../ui/Button'
+import { formatPrice } from '../../utils/currency'
 
 interface GiftCustomizerProps {
   giftPacks: Product[]
@@ -74,7 +75,7 @@ export function GiftCustomizer({ giftPacks }: GiftCustomizerProps) {
                 <p className="font-display text-sm font-semibold text-navy-900">
                   {pack.name}
                 </p>
-                <p className="mt-1 text-lg font-bold text-gold-600">${pack.price}</p>
+                <p className="mt-1 text-lg font-bold text-gold-600">{formatPrice(pack.price)}</p>
               </button>
             ))}
           </div>
@@ -189,7 +190,7 @@ export function GiftCustomizer({ giftPacks }: GiftCustomizerProps) {
           disabled={!canAdd}
         >
           <ShoppingBag className="h-4 w-4" />
-          {added ? 'Added to Cart!' : `Add Gift Pack — $${selectedPack.price}`}
+          {added ? 'Added to Cart!' : `Add Gift Pack — ${formatPrice(selectedPack.price)}`}
         </Button>
         {!canAdd && (
           <p className="text-center text-xs text-navy-700/50">

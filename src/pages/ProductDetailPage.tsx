@@ -5,6 +5,7 @@ import { getProductById, products } from '../data/products'
 import { useCart } from '../context/CartContext'
 import { ProductGrid } from '../components/products/ProductGrid'
 import { Button } from '../components/ui/Button'
+import { formatPrice } from '../utils/currency'
 
 export function ProductDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -93,7 +94,7 @@ export function ProductDetailPage() {
           </div>
 
           <p className="mt-8 font-display text-4xl font-bold text-navy-900">
-            ${product.price}
+            {formatPrice(product.price)}
           </p>
 
           <div className="mt-6 flex items-center gap-4">

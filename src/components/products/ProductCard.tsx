@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Gift, Star, ShoppingBag } from 'lucide-react'
 import type { Product } from '../../types'
 import { useCart } from '../../context/CartContext'
+import { formatPrice } from '../../utils/currency'
 
 interface ProductCardProps {
   product: Product
@@ -47,7 +48,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="mt-4 flex items-center justify-between">
           <span className="font-display text-xl font-semibold text-navy-900">
-            ${product.price}
+            {formatPrice(product.price)}
           </span>
           {isGift ? (
             <Link
