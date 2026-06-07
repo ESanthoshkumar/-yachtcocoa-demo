@@ -6,6 +6,7 @@ import { ProductsPage } from './pages/ProductsPage'
 import { ProductDetailPage } from './pages/ProductDetailPage'
 import { CartPage } from './pages/CartPage'
 import { CheckoutPage } from './pages/CheckoutPage'
+import { GiftPackPage } from './pages/GiftPackPage'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <Route path="products/:id" element={<ProductDetailPage />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="checkout" element={<CheckoutPage />} />
+            <Route path="gifts" element={<GiftPackPage />} />
           </Route>
         </Routes>
       </CartProvider>

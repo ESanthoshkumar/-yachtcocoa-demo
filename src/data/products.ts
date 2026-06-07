@@ -11,6 +11,11 @@ export const categories: CategoryInfo[] = [
     label: 'Specialty',
     description: 'Unique flavour combinations for the discerning palate',
   },
+  {
+    id: 'gifts',
+    label: 'Gift Packs',
+    description: 'Personalised gift packs with photo print and surprise wrapping',
+  },
 ]
 
 export const products: Product[] = [
@@ -88,7 +93,76 @@ export const products: Product[] = [
     origin: 'Colombia',
     weight: '85g',
   },
+  {
+    id: 'gift-1',
+    name: 'Sweet Surprise Pack',
+    description: 'Two artisan bars in a photo-printed, hand-wrapped surprise box.',
+    longDescription:
+      'A thoughtful gift for someone special. Choose two of our finest bars, upload a cherished photo, and we print it on the cover and wrap it beautifully for a delightful surprise reveal.',
+    price: 45,
+    category: 'gifts',
+    image: '/product/dark.png',
+    badge: 'For Loved Ones',
+    rating: 5.0,
+    reviews: 67,
+    origin: 'Assorted',
+    weight: '160g',
+    includes: [
+      '2 artisan chocolate bars of your choice',
+      'Your photo printed on the gift cover',
+      'Hand-wrapped surprise box with ribbon',
+      'Personal message gift tag',
+    ],
+  },
+  {
+    id: 'gift-2',
+    name: 'Love & Cocoa Box',
+    description: 'Three bars with photo cover print and premium surprise wrapping.',
+    longDescription:
+      'Our most popular gift for partners, parents, and dear friends. Three premium bars nestled in an elegant box — your photo printed on the lid, wrapped in your chosen style for an unforgettable unboxing moment.',
+    price: 68,
+    category: 'gifts',
+    image: '/product/almond.png',
+    badge: 'Most Gifted',
+    rating: 5.0,
+    reviews: 94,
+    origin: 'Assorted',
+    weight: '250g',
+    includes: [
+      '3 premium chocolate bars',
+      'Photo printed on gift cover',
+      'Choice of 3 wrapping styles',
+      'Surprise ribbon & gift tag',
+      'Complimentary greeting card',
+    ],
+  },
+  {
+    id: 'gift-3',
+    name: 'Grand Gesture Set',
+    description: 'The complete collection with luxury wrap and photo cover print.',
+    longDescription:
+      'The ultimate expression of love. All five Yacht Cocoa creations presented in a luxury gift box with your photo beautifully printed on the cover, finished with premium wrapping for a grand surprise.',
+    price: 95,
+    category: 'gifts',
+    image: '/product/DateChoco.png',
+    badge: 'Premium',
+    rating: 5.0,
+    reviews: 41,
+    origin: 'Assorted',
+    weight: '450g',
+    includes: [
+      'All 5 artisan chocolate varieties',
+      'Large-format photo print on cover',
+      'Premium festive or navy wrapping',
+      'Handwritten-style message card',
+      'Luxury surprise unboxing experience',
+    ],
+  },
 ]
+
+export function getGiftPacks(): Product[] {
+  return products.filter((p) => p.category === 'gifts')
+}
 
 export function getProductById(id: string): Product | undefined {
   return products.find((p) => p.id === id)

@@ -7,6 +7,7 @@ import { Logo } from './Logo'
 const navLinks = [
   { to: '/products', label: 'Shop' },
   { to: '/products?category=bars', label: 'Bars' },
+  { to: '/gifts', label: 'Gift Packs' },
   { to: '/products?category=truffles', label: 'Specialty' },
 ]
 

@@ -52,6 +52,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/gifts" className="hover:text-gold-500">
+                  Gift Packs
+                </Link>
+              </li>
+              <li>
                 <Link to="/products?category=truffles" className="hover:text-gold-500">
                   Specialty
                 </Link>

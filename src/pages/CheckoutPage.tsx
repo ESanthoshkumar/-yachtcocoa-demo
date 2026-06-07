@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft, CheckCircle, CreditCard, Lock } from 'lucide-react'
 import { useCart } from '../context/CartContext'
+import { giftWrapOptions } from '../data/giftWrap'
 import { Button } from '../components/ui/Button'
 
 export function CheckoutPage() {
@@ -170,17 +171,31 @@ export function CheckoutPage() {
             Order Summary
           </h2>
 
-          <ul className="mt-6 space-y-3">
-            {items.map(({ product, quantity }) => (
-              <li key={product.id} className="flex justify-between text-sm">
-                <span className="text-navy-700/70">
-                  {product.name} × {quantity}
-                </span>
-                <span className="font-medium text-navy-900">
-                  ${(product.price * quantity).toFixed(2)}
-                </span>
-              </li>
-            ))}
+          <ul className="mt-6 space-y-4">
+            {items.map(({ cartItemId, product, quantity, gift }) => {
+              const wrap = gift
+                ? giftWrapOptions.find((w) => w.id === gift.wrapStyle)
+                : null
+
+              return (
+                <li key={cartItemId} className="text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-navy-700/70">
+                      {product.name} × {quantity}
+                    </span>
+                    <span className="font-medium text-navy-900">
+                      ${(product.price * quantity).toFixed(2)}
+                    </span>
+                  </div>
+                  {gift && (
+                    <div className="mt-1.5 space-y-0.5 text-xs text-navy-700/50">
+                      <p>Gift for {gift.recipientName}</p>
+                      {wrap && <p>{wrap.label} wrap · photo on cover</p>}
+                    </div>
+                  )}
+                </li>
+              )
+            })}
           </ul>
 
           <div className="mt-6 space-y-2 border-t border-cream-200 pt-4 text-sm">

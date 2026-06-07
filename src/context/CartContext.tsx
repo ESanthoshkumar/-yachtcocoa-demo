@@ -6,50 +6,69 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import type { CartItem, Product } from '../types'
+import type { CartItem, GiftCustomization, Product } from '../types'
 
 interface CartContextValue {
   items: CartItem[]
   itemCount: number
   subtotal: number
-  addItem: (product: Product, quantity?: number) => void
-  removeItem: (productId: string) => void
-  updateQuantity: (productId: string, quantity: number) => void
+  addItem: (product: Product, quantity?: number, gift?: GiftCustomization) => void
+  removeItem: (cartItemId: string) => void
+  updateQuantity: (cartItemId: string, quantity: number) => void
   clearCart: () => void
   isInCart: (productId: string) => boolean
 }
 
 const CartContext = createContext<CartContextValue | null>(null)
 
+function createCartItemId() {
+  return `ci-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
 
-  const addItem = useCallback((product: Product, quantity = 1) => {
-    setItems((prev) => {
-      const existing = prev.find((i) => i.product.id === product.id)
-      if (existing) {
-        return prev.map((i) =>
-          i.product.id === product.id
-            ? { ...i, quantity: i.quantity + quantity }
-            : i
+  const addItem = useCallback(
+    (product: Product, quantity = 1, gift?: GiftCustomization) => {
+      setItems((prev) => {
+        if (gift) {
+          return [
+            ...prev,
+            { cartItemId: createCartItemId(), product, quantity, gift },
+          ]
+        }
+
+        const existing = prev.find(
+          (i) => i.product.id === product.id && !i.gift
         )
-      }
-      return [...prev, { product, quantity }]
-    })
+        if (existing) {
+          return prev.map((i) =>
+            i.cartItemId === existing.cartItemId
+              ? { ...i, quantity: i.quantity + quantity }
+              : i
+          )
+        }
+        return [
+          ...prev,
+          { cartItemId: createCartItemId(), product, quantity },
+        ]
+      })
+    },
+    []
+  )
+
+  const removeItem = useCallback((cartItemId: string) => {
+    setItems((prev) => prev.filter((i) => i.cartItemId !== cartItemId))
   }, [])
 
-  const removeItem = useCallback((productId: string) => {
-    setItems((prev) => prev.filter((i) => i.product.id !== productId))
-  }, [])
-
-  const updateQuantity = useCallback((productId: string, quantity: number) => {
+  const updateQuantity = useCallback((cartItemId: string, quantity: number) => {
     if (quantity <= 0) {
-      setItems((prev) => prev.filter((i) => i.product.id !== productId))
+      setItems((prev) => prev.filter((i) => i.cartItemId !== cartItemId))
       return
     }
     setItems((prev) =>
       prev.map((i) =>
-        i.product.id === productId ? { ...i, quantity } : i
+        i.cartItemId === cartItemId ? { ...i, quantity } : i
       )
     )
   }, [])

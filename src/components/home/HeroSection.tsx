@@ -88,13 +88,13 @@ export function HeroSection() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link to="/products?category=truffles">
+              <Link to="/gifts">
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-white/25 bg-white/5 text-cream-50 backdrop-blur-sm hover:border-gold-400 hover:bg-gold-500/20 hover:text-cream-50"
                 >
-                  Specialty
+                  Gift Packs
                 </Button>
               </Link>
             </div>

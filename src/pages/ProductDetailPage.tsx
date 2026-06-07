@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
 import { ArrowLeft, Minus, Plus, ShoppingBag, Star } from 'lucide-react'
 import { getProductById, products } from '../data/products'
 import { useCart } from '../context/CartContext'
@@ -12,6 +12,10 @@ export function ProductDetailPage() {
   const { addItem, isInCart } = useCart()
   const [quantity, setQuantity] = useState(1)
   const [added, setAdded] = useState(false)
+
+  if (product?.category === 'gifts') {
+    return <Navigate to="/gifts" replace />
+  }
 
   if (!product) {
     return (
